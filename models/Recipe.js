@@ -12,6 +12,6 @@ const RecipeSchema = new mongoose.Schema({
   subRows: { type: [this], default: [] }
 });
 
-const Recipe = mongoose.model('recipes', RecipeSchema);
+const Recipe = mongoose.model('Recipe', RecipeSchema);
 
-module.exports = Recipe;
+module.exports = {Recipe};
