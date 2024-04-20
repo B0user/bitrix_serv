@@ -24,6 +24,6 @@ mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);
-        console.log(`Network access via: ${ipAddress}:${port}!`);
+        console.log(`Network access via: ${ipAddress}:${PORT}!`);
     });
 });
