@@ -4,7 +4,10 @@ const
     app = express(),
     PORT = process.env.PORT || 8000,
     mongoose = require('mongoose'),
-    connectDB = require('./utils/dbConnection');
+    connectDB = require('./utils/dbConnection'),
+    ip = require('ip');
+
+const ipAddress = ip.address();
 
 // Connect to MongoDB
 connectDB();
@@ -19,5 +22,8 @@ app.use('/api', require('./routes'));
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+        console.log(`Network access via: ${ipAddress}:${port}!`);
+    });
 });
